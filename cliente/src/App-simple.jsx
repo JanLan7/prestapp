@@ -70,7 +70,6 @@ function App() {
         obtenerUsuarios();
         obtenerAlquileres();
       } else if (rol === "usuario") {
-        // Cargar datos específicos del usuario
         obtenerDatosUsuario();
         obtenerMiHistorial();
         obtenerMisPrestamos();
@@ -117,7 +116,6 @@ function App() {
           setMensaje("Login exitoso");
         } else {
           setMensaje("Usuario registrado exitosamente");
-          // Note: No clearing states here as Auth component manages its own state
         }
       } else {
         setMensaje(data.error || `Error en ${tipo === "login" ? "el login" : "el registro"}`);
@@ -274,7 +272,7 @@ function App() {
     if (fechaInicioRegistros && fechaFinRegistros) {
       obtenerRegistros(fechaInicioRegistros, fechaFinRegistros);
     } else {
-      setMensaje("❌ Selecciona ambas fechas para el filtro personalizado");
+      setMensaje("Selecciona ambas fechas para el filtro personalizado");
     }
   };
 
@@ -282,21 +280,19 @@ function App() {
   const handleBuscarUsuario = async () => {
     const cedula = document.getElementById("cedulaBusqueda").value.trim();
     if (!cedula) {
-      setMensaje("❌ Ingresa una cédula para buscar");
+      setMensaje("Ingresa una cédula para buscar");
       return;
     }
 
     const usuario = await buscarUsuario(cedula);
     if (usuario) {
       uiState.setUsuarioSeleccionado(usuario);
-      setMensaje(`✅ Usuario encontrado: ${usuario.nombre} ${usuario.apellido}`);
+      setMensaje(`Usuario encontrado: ${usuario.nombre} ${usuario.apellido}`);
     }
   };
 
   const handleCrearUsuarioAdmin = async (userData) => {
-    // Si userData no se proporciona, usar el del estado global
     const dataToUse = userData || uiState.nuevoUsuario;
-    console.log("🚀 handleCrearUsuarioAdmin ejecutado con:", dataToUse);
     
     const success = await crearUsuarioAdmin(dataToUse);
     if (success) {
@@ -348,7 +344,7 @@ function App() {
     e.preventDefault();
     const success = await crearCategoria(uiState.nuevaCategoria);
     if (success) {
-      uiState.setNuevaCategoria({ nombre: "", descripcion: "", icono: "📦" });
+      uiState.setNuevaCategoria({ nombre: "", descripcion: "", icono: "�" });
       uiState.setMostrarFormCategoria(false);
     }
   };

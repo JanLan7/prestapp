@@ -76,7 +76,6 @@ export const useDataManagement = (token, setMensaje, setLoading) => {
     try {
       const data = await ApiService.getUserProfile(token);
       setDatosUsuario(data);
-      console.log("👤 Datos del usuario obtenidos:", data);
     } catch (error) {
       console.error("Error al obtener datos del usuario:", error);
     }
@@ -86,10 +85,9 @@ export const useDataManagement = (token, setMensaje, setLoading) => {
     try {
       const data = await ApiService.getUserHistory(token, fecha);
       setMiHistorial(data);
-      console.log("📋 Mi historial obtenido:", data.length, "registros");
     } catch (error) {
       console.error("Error al obtener mi historial:", error);
-      setMensaje("❌ Error de conexión al obtener mi historial");
+      setMensaje("Error de conexión al obtener mi historial");
     }
   };
 
@@ -97,10 +95,9 @@ export const useDataManagement = (token, setMensaje, setLoading) => {
     try {
       const data = await ApiService.getUserLoans(token);
       setMisPrestamos(data);
-      console.log("📦 Mis préstamos obtenidos:", data.length, "items");
     } catch (error) {
       console.error("Error al obtener mis préstamos:", error);
-      setMensaje("❌ Error de conexión al obtener mis préstamos");
+      setMensaje("Error de conexión al obtener mis préstamos");
     }
   };
 
