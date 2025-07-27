@@ -116,6 +116,10 @@ mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URL)
     }
 
     const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => console.log(`🚀 Servicio corriendo en puerto ${PORT}`));
+    if (process.env.NODE_ENV !== 'production') {
+        app.listen(PORT, () => console.log(`🚀 Servicio corriendo en puerto ${PORT}`));
+    }
 })
 .catch(err => console.log("Error en Mongo", err));
+
+export default app;
