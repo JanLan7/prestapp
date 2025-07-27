@@ -2,9 +2,9 @@
  * Servicio centralizado para manejar todas las comunicaciones con la API REST
  * Incluye métodos para autenticación, gestión de usuarios, categorías, elementos y alquileres
  */
-import { API_URL } from '../config/config.js';
+import { API_URL } from '../config/api.js';
 
-const API_BASE = `${API_URL}/api`;
+const API_BASE = API_URL;
 
 class ApiService {
   /**
