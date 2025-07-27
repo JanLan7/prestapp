@@ -115,6 +115,7 @@ mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URL)
         console.log("👤 Usuario administrador creado (cedula: admin, password: admin123)");
     }
 
-    app.listen(5000, () => console.log("🚀 Servicio corriendo en puerto 5000"));
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`🚀 Servicio corriendo en puerto ${PORT}`));
 })
 .catch(err => console.log("Error en Mongo", err));

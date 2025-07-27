@@ -4,8 +4,8 @@ const config = {
     API_URL: 'http://localhost:5000/api'
   },
   production: {
-    // Cambia esta URL por tu backend deployado (Railway, Render, etc.)
-    API_URL: import.meta.env.VITE_API_URL || 'prestapp'
+    // En Vercel, el backend estará en la misma URL pero con /api
+    API_URL: '/api'
   }
 };
 
