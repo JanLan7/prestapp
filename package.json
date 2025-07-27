@@ -1,12 +1,15 @@
 {
-  "name": "14-7-25",
+  "name": "prestapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sistema de Gestión de Préstamos Profesional",
+  "main": "server/index.js",
   "scripts": {
-    "dev": "node --watch server/index.js"
+    "dev": "node --watch server/index.js",
+    "build": "cd cliente && npm install && npm run build",
+    "start": "node server/index.js",
+    "install-all": "npm install && cd cliente && npm install"
   },
-  "keywords": [],
+  "keywords": ["prestamos", "gestion", "inventario", "react", "node"],
   "author": "",
   "license": "ISC",
   "type": "module",

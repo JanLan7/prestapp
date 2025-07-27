@@ -32,7 +32,7 @@ app.use("/api/items", itemRoutes);
 app.use("/api/user-dashboard", userDashboardRoutes);
 
 // Conexión a MongoDB y carga inicial
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URL)
 .then(async () => {
     console.log("✅ Conectado a Mongo");
 

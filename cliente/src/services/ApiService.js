@@ -2,7 +2,9 @@
  * Servicio centralizado para manejar todas las comunicaciones con la API REST
  * Incluye métodos para autenticación, gestión de usuarios, categorías, elementos y alquileres
  */
-const API_BASE = "http://localhost:5000/api";
+import { API_URL } from '../config/config.js';
+
+const API_BASE = `${API_URL}/api`;
 
 class ApiService {
   /**

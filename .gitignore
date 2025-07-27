@@ -8,10 +8,14 @@ server/node_modules/
 .env.*
 server/.env
 cliente/.env
+.env.local
+.env.production
 
 # Production builds
 cliente/dist/
 cliente/build/
+dist/
+build/
 
 # Logs
 logs
@@ -60,3 +64,6 @@ Thumbs.db
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Vercel
+.vercel
